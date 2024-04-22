@@ -1,16 +1,16 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+const pageTitle = "Página Inicial";
+const allPosts = await Astro.glob("../pages/posts/*.md");
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Meu site astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <h2>O Subtitulo incrível do meu blog</h2>
+  {
+    allPosts.map((post) => (
+      <li>
+        <a href={post.url}>{post.frontmatter.title}</a>
+      </li>
+    ))
+  }
+</BaseLayout>

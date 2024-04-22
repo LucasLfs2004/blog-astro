@@ -1,0 +1,30 @@
+---
+import "../styles/global.css";
+import Social from "./Social.astro";
+---
+
+<style>
+  footer {
+    background-color: #1c1c1c;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    row-gap: 12px;
+  }
+</style>
+
+<footer>
+  <Social
+    href="https://github.com/LucasLfs2004"
+    username="LucasLfs2004"
+    image="/assets/github-logo.png"
+  />
+  <Social
+    href="https://www.linkedin.com/in/lucas-sil-va/"
+    username="Lucas Ferreira Silva"
+    image="/assets/linkedin-logo.png"
+  />
+</footer>
