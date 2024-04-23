@@ -1,13 +1,27 @@
 ---
-import Hamburger from "./Hamburger.astro";
-import Navigation from "./Navigation.astro";
-import ThemeIcon from "./ThemeIcon.astro";
+
 ---
 
 <header>
-  <nav>
-    <Hamburger />
-    <Navigation />
-    <ThemeIcon />
-  </nav>
+  <h1>Lucas Ferreira</h1>
 </header>
+
+<style>
+  header {
+    /* background: linear-gradient(180deg, #3245ff 0%, #bc52ee 100%); */
+    /* background-color: #010f20; */
+    box-shadow: 0px -1px 2px inset #5b43d6;
+    box-shadow: inset 0px -2px 2px -2px #5b43d6;
+    border-bottom: 1px solid #010f20;
+  }
+
+  h1 {
+    color: aliceblue;
+    background: linear-gradient(95deg, #010f20 9.34%, #5b43d6 99.96%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 20px;
+    font-weight: 500;
+  }
+</style>
