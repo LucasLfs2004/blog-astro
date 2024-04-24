@@ -1,27 +1,65 @@
 ---
+import Navigation from "./Navigation.astro";
 
+const allPosts = await Astro.glob("../pages/posts/*.md");
+
+const uniqueTags = [
+  ...new Set(allPosts.map((post) => post.frontmatter.tags).flat()),
+];
 ---
 
 <header>
-  <h1>Lucas Ferreira</h1>
+  <div class="row">
+    <h1>Lucas</h1>
+    <Navigation />
+  </div>
+  <div class="tags">
+    {uniqueTags.map((post) => <a href={`/tags/${post}`}>{post}</a>)}
+  </div>
 </header>
 
 <style>
   header {
-    /* background: linear-gradient(180deg, #3245ff 0%, #bc52ee 100%); */
-    /* background-color: #010f20; */
-    box-shadow: 0px -1px 2px inset #5b43d6;
-    box-shadow: inset 0px -2px 2px -2px #5b43d6;
-    border-bottom: 1px solid #010f20;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+  }
+
+  header .row {
+    padding: 16px 24px 8px 24px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: inset 0px -2px 4px -2px #5ce1e6;
+    /* border-bottom: 1px solid #010f20; */
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: row;
+    /* column-gap: 12px; */
+    background-color: #1eccef;
+  }
+
+  .tags a {
+    padding: 6px 12px;
+    text-transform: uppercase;
+    color: #010f20;
+    transition: all 0.3s ease;
+  }
+
+  .tags a:hover {
+    color: #fff;
   }
 
   h1 {
-    color: aliceblue;
-    background: linear-gradient(95deg, #010f20 9.34%, #5b43d6 99.96%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 20px;
+    color: #1eccef;
+    margin: 0;
+    font-size: 28px;
     font-weight: 500;
   }
 </style>

@@ -1,15 +1,15 @@
 ---
 import Footer from "../components/Footer.astro";
-import Navigation from "../components/Navigation.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/global.css";
 
 const pageTitle = "Sobre mim";
 
 const identify = {
-  firstName: "Sarah",
-  country: "Canadá",
-  occupation: "Escritora Técnica",
-  hobbies: ["fotografia", "observar pássaros", "beisebol"],
+  firstName: "Lucas",
+  country: "Brazil",
+  occupation: "Desenvolvedor Frontend",
+  hobbies: ["Fotografia", "Futevôlei", "Beach Tennis", "Jogos", "Programação"],
 };
 
 const skills = [
@@ -18,6 +18,7 @@ const skills = [
   "JavaScript",
   "React",
   "Astro",
+  "Python",
   "Escrever Documentação",
 ];
 
@@ -28,77 +29,47 @@ const goal = 3;
 const skillColor = "navy";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    <style define:vars={{ skillColor }}>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
+<BaseLayout pageTitle={pageTitle}>
+  <p class="paragraph">
+    Me chamo Lucas Ferreira Silva, atualmente sou estagiário da empresa de
+    desenvolvimento web e mobile chamada PMOVIL, nela executa tarefas como
+    desenvolvimento de Landing Pages, audxílio no desenvolvimento de novas
+    aplicações e manutenção de projetos legados.
+  </p>
+  <p class="paragraph">
+    Busco me desenvolver profissionalmente e e tecnicamente, para que possa
+    alcançar cargos e demandas mais altas, tornando me um desenvolvedor e um
+    funcionário melhor.
+  </p>
 
-      .skill {
-        /* color: green; */
-        color: var(--skillColor);
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <Navigation />
-    <h1>{pageTitle}</h1>
-    <h2>
-      Bem vindo ao meu site astro, estou praticando e busco desenvolver uma
-      apliação complexa utilizando astro no futuro.
-    </h2>
+  <p class="paragraph">
+    Este site será atualizado enquanto eu participo e concluo projetos e aprendo
+    sobre novos assuntos.
+  </p>
 
-    <p>
-      Estou resolvendo o tutorial introdutório do Astro. Esta é a segunda página
-      no meu website, e é a primeira que eu mesmo construí!
-    </p>
-
-    <p>
-      Este site será atualizado enquanto eu completo mais desse tutorial, então
-      continue verificando e veja como minha jornada está indo!
-    </p>
-
-    <p>Aqui estão alguns fatos sobre mim:</p>
-    <ul>
-      <li>Meu nome é {identify.firstName}.</li>
-      <li>
-        Eu moro no {identify.country} e eu trabalho como uma {
-          identify.occupation
-        }.
-      </li>
-      {
-        identify.hobbies.length >= 2 && (
-          <li>
-            Dois dos meus hobbies são: {identify.hobbies[0]} and{" "}
-            {identify.hobbies[1]}
-          </li>
-        )
-      }
-    </ul>
-    <p>Minhas habilidades são:</p>
-    <ul>
-      {skills.map((habilidade) => <li class="skill">{habilidade}</li>)}
-    </ul>
-
-    {happy && <p>Estou feliz em estar aprendendo Astro!</p>}
-
-    {finished && <p>Eu terminei esse tutorial!</p>}
-
+  <p class="paragraph">Aqui estão alguns fatos sobre mim:</p>
+  <ul>
+    <li>
+      <p>
+        Meu nome é {identify.firstName}.
+      </p>
+    </li>
+    <li>
+      <p>
+        Moro no {identify.country} e trabalho como {identify.occupation}.
+      </p>
+    </li>
+  </ul>
+  <p>Minhas habilidades são:</p>
+  <ul>
     {
-      goal === 3 ? (
-        <p>Minha meta é terminar em 3 dias.</p>
-      ) : (
-        <p>Minha meta não é em 3 dias.</p>
-      )
+      skills.map((habilidade) => (
+        <li class="skill">
+          {" "}
+          <p>{habilidade}</p>
+        </li>
+      ))
     }
-    <Footer />
-  </body>
-</html>
+  </ul>
+  <Footer />
+</BaseLayout>
