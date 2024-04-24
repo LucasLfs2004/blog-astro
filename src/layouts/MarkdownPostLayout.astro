@@ -11,12 +11,20 @@ const { frontmatter } = Astro.props;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
-  <p>{frontmatter.pubDate.toString().slice(0, 10)}</p>
-  <p><em>{frontmatter.description}</em></p>
-  <p>Escrito por: {frontmatter.author}</p>
-  <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
+  <div class="row">
+    <img
+      src={frontmatter.image.url}
+      width="500px"
+      alt={frontmatter.image.alt}
+    />
+    <div class="column">
+      <p>{frontmatter.pubDate.toString().slice(0, 10).replaceAll("-", "/")}</p>
+      <p><em>{frontmatter.description}</em></p>
+      <p>Escrito por: <span>{frontmatter.author}</span></p>
+    </div>
+  </div>
 
-  <div class="tags">
+  <!-- <div class="tags">
     {
       uniqueTags.map((tag) => (
         <p class="tag">
@@ -24,7 +32,7 @@ const { frontmatter } = Astro.props;
         </p>
       ))
     }
-  </div>
+  </div> -->
   <slot />
 </BaseLayout>
 
@@ -45,5 +53,23 @@ const { frontmatter } = Astro.props;
     padding: 0.5em 1em;
     font-size: 1.15em;
     background-color: #f8fcfd;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    column-gap: 24px;
+  }
+
+  .row .column p {
+    font-size: 18px;
+  }
+
+  .row .column p:last-child {
+    font-weight: 600;
+  }
+
+  span {
+    color: #1eccef;
   }
 </style>

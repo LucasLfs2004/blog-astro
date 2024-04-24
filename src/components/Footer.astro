@@ -1,34 +1,92 @@
 ---
 import "../styles/global.css";
-import Social from "./Social.astro";
+import SocialMedia from "./SocialMedia.astro";
 ---
 
 <style>
   footer {
-    /* margin-top: 32px; */
     background-color: #1c1c1c;
-    padding: 18px;
+    padding: 18px 32px;
     display: flex;
     align-items: center;
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    row-gap: 12px;
-    position: absolute;
+    row-gap: 24px;
+    /* position: absolute; */
     bottom: 0;
+    margin-top: 48px;
     border-top: 1px solid #02eddf;
+  }
+
+  .row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .column {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+  }
+
+  span {
+    font-size: 10px;
+    color: #fff;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  a {
+    font-size: 18px;
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+    border-bottom: 1px solid #02eddf;
+    line-height: 20px;
+    width: min-content;
+  }
+
+  .column.contact {
+    row-gap: 6px;
+  }
+
+  .column.contact p {
+    margin: 0;
+  }
+
+  .column.contact p:first-child {
+    font-weight: 600;
   }
 </style>
 
 <footer>
-  <Social
-    href="https://github.com/LucasLfs2004"
-    username="LucasLfs2004"
-    image="/assets/github-logo.png"
-  />
-  <Social
-    href="https://www.linkedin.com/in/lucas-sil-va/"
-    username="Lucas Ferreira Silva"
-    image="/assets/linkedin-logo.png"
-  />
+  <div class="row">
+    <div class="column">
+      <!-- <Social
+        href="https://github.com/LucasLfs2004"
+        username="LucasLfs2004"
+        image="/assets/github-logo.png"
+        />
+        <Social
+        href="https://www.linkedin.com/in/lucas-sil-va/"
+        username="Lucas Ferreira Silva"
+        image="/assets/linkedin-logo.png"
+        /> -->
+
+      <div class:list={["column", "contact"]}>
+        <p>Contatos:</p>
+        <p>lucas_lfs04@outlook.com</p>
+      </div>
+      <a href="/about">Sobre</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <SocialMedia />
+  </div>
+
+  <span
+    >Powered by Astro JS <br /> Este site não armazena nenhuma informação sensível
+  </span>
 </footer>
