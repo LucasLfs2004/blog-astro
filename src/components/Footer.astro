@@ -3,6 +3,24 @@ import "../styles/global.css";
 import SocialMedia from "./SocialMedia.astro";
 ---
 
+<footer>
+  <div class="row">
+    <div class="column">
+      <div class:list={["column", "contact"]}>
+        <p>Contatos:</p>
+        <p>lucas_lfs04@outlook.com</p>
+      </div>
+      <a href="/about">Sobre</a>
+      <a href="/blog">Blog</a>
+    </div>
+    <SocialMedia />
+  </div>
+
+  <span
+    >Powered by Astro JS <br /> Este site não armazena nenhuma informação sensível
+  </span>
+</footer>
+
 <style>
   footer {
     background-color: #1c1c1c;
@@ -60,33 +78,27 @@ import SocialMedia from "./SocialMedia.astro";
   .column.contact p:first-child {
     font-weight: 600;
   }
+
+  @media (max-width: 1024px) {
+    .row {
+      width: 100%;
+      align-items: center;
+      row-gap: 20px;
+    }
+
+    .contact {
+      font-size: 14px;
+      column-gap: 8px;
+    }
+
+    .column {
+      row-gap: 8px;
+    }
+
+    a {
+      /* display: none; */
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
 </style>
-
-<footer>
-  <div class="row">
-    <div class="column">
-      <!-- <Social
-        href="https://github.com/LucasLfs2004"
-        username="LucasLfs2004"
-        image="/assets/github-logo.png"
-        />
-        <Social
-        href="https://www.linkedin.com/in/lucas-sil-va/"
-        username="Lucas Ferreira Silva"
-        image="/assets/linkedin-logo.png"
-        /> -->
-
-      <div class:list={["column", "contact"]}>
-        <p>Contatos:</p>
-        <p>lucas_lfs04@outlook.com</p>
-      </div>
-      <a href="/about">Sobre</a>
-      <a href="/blog">Blog</a>
-    </div>
-    <SocialMedia />
-  </div>
-
-  <span
-    >Powered by Astro JS <br /> Este site não armazena nenhuma informação sensível
-  </span>
-</footer>

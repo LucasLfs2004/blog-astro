@@ -171,10 +171,24 @@ li a:hover {
 }
 
 
+/*
+Estilização dos posts
+*/
+
 .post-page p {
     color: #f1f5f9;
     font-size: 18px;
     text-align: justify;
+}
+
+@media (max-width: 1024px) {
+    .post-page h1 {
+        font-size: 18px;
+    }
+
+    .post-page h2 {
+        font-size: 16px;
+    }
 }
 
 .row-content-img .div-img {
@@ -229,6 +243,7 @@ Menu Hamburguer
 @media (max-width: 1024px) {
     .menu {
         display: flex;
+        /* position: relative; */
     }
 }
 
@@ -247,23 +262,42 @@ Menu Hamburguer
 
 .menu-window {
     position: absolute;
-    left: 100vw;
+    /* left: 100vw; */
     display: flex;
+    top: -100%;
+    left: 0;
     flex-direction: column;
-    top: 66px;
+    /* top: 66px; */
     background-color: #1c1c1c;
     width: 100%;
-    transition: 1s all ease-in-out;
+    transition: 0.5s all ease-in-out;
 }
 
 .menu-window.menu-visible {
-    left: 0;
+    top: 46px;
 }
+
+/* .menu-window .navigation {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 36px;
+} */
 
 .menu-window a {
     padding-left: 1rem;
     font-size: 16px;
     font-weight: 600;
     line-height: 44px;
-    box-shadow: inset 0px -2px 4px -2px #5ce1e6;
+    box-shadow: inset 0px -2px 1px -1px #5ce1e6;
+    cursor: default;
+}
+
+.menu-window p {
+    margin: 0;
+    background: linear-gradient(#f1f5f910 60%, #1c1c1c);
+    color: #1eccef;
+    padding: 6px 0;
+    text-align: center;
+    font-weight: 600;
 }

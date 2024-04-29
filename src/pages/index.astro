@@ -39,4 +39,11 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
     color: #1eccef;
     text-decoration: none;
   }
+
+  @media (max-width: 1024px) {
+    .saudacao p {
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
 </style>
