@@ -7,14 +7,14 @@ image:
     url: "/assets/react-native.png"
     alt: "Miniatura de arcos do Astro."
 pubDate: 2024-04-29
-tags: ["astro", "blogueirando", "aprendendo em público", "sucessos", "Estágio"]
+tags: ["Estágio", "React Native"]
 ---
 
 Quando entrei no estágio, me deram a tarefa inicial de estudar React e React Native. Iniciei meus estudos com o React Js, e após algum tempo, tive minha primeira tarefa, com uma aplicação que era tratada como um bicho papão dentro da empresa, onde ninguém queria mexer no código e muito menos dar manutenção. Com a má fama desse projeto, tive receio e medo de não conseguir fazer nada certo, mas consegui concluir.
 
-<div style="display: flex; column-gap: 24px; align-items: flex-start">
-    <div style="max-width: 40%; max-height: 300px; object-fit: cover">
-        <img style="width: 450px; height: 240px; object-fit: cover" src="/assets/posts/android14.jpeg" alt="android14" />
+<div style="display: flex; column-gap: 24px; align-items: flex-start" class="row-content-img" >
+    <div  class="div-img">
+        <img  src="/assets/posts/android14.jpeg" alt="android14" />
     </div>
     <p>
         Conforme foi passando o tempo, cada vez mais tive tarefas de manutenção dentro desse app, no qual fui cada vez mais compreendendo o funcionamento e a estrutura do projeto. Passado quase um ano realizando as tarefas desse projeto, chegou uma nova demanda para a parte android desse aplicativo, ao qual era feito em React Native, após resolver o problema e tentar testar em um dispositivio com android 14, o mais recente até o momento, notei que o aplicativo não abria nessa versão de Android.
