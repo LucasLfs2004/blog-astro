@@ -6,7 +6,7 @@ description: 'Descrevo sobre minha experiência na faculdade e no estágio até 
 author: 'Lucas Ferreira Silva'
 image:
     url: '/assets/development-image-background.jpg'
-    alt: 'A logo completa do Astro.'
+    alt: 'Imagem de fundo de desenvolvimento.'
 tags: ["Análise e Desenvolvimento de Sistemas", "Estudos", "Estágio"]
 ---
 # As vantagens do curso de Análise e Desenvolvimento de Sistemas

@@ -1,5 +1,5 @@
 ---
-import BlogPost from "../../components/BlogPost.astro";
+import PostCard from "../../components/PostCard.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -27,11 +27,5 @@ const { posts } = Astro.props;
 
 <BaseLayout pageTitle={tag}>
   <p>Postagens com a tag {tag}</p>
-  <ul>
-    {
-      posts.map((post) => (
-        <BlogPost url={post.url} title={post.frontmatter.title} />
-      ))
-    }
-  </ul>
+  <PostCard posts={posts} />
 </BaseLayout>

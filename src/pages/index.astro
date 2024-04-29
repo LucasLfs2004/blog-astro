@@ -1,4 +1,5 @@
 ---
+import PostCard from "../components/PostCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "Bem vindo ao meu blog!";
 const allPosts = await Astro.glob("../pages/posts/*.md");
@@ -25,15 +26,7 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
       Abaixo está listado alguns dos meus posts mais recentes:
     </p>
   </div>
-  <ul>
-    {
-      allPosts.map((post) => (
-        <li>
-          <a href={post.url}>{post.frontmatter.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <PostCard posts={allPosts} />
 </BaseLayout>
 
 <style>
@@ -45,19 +38,5 @@ const allPosts = await Astro.glob("../pages/posts/*.md");
   .saudacao a {
     color: #1eccef;
     text-decoration: none;
-  }
-
-  li {
-    color: #1eccef;
-  }
-
-  li a {
-    font-size: 18px;
-    color: #fff;
-    text-decoration: none;
-  }
-
-  li a:hover {
-    text-decoration: underline;
   }
 </style>
